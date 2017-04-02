@@ -150,6 +150,16 @@ while True:
     else:
         StopMotors()
 
+    if (buttons & cwiid.BTN_MINUS):
+        print 'Minus Button pressed'
+        speed = speed - 1
+        time.sleep(button_delay)
+
+    if (buttons & cwiid.BTN_PLUS):
+        print 'Plus Button pressed'
+        speed = speed + 1
+        time.sleep(button_delay)
+
     if (buttons & cwiid.BTN_B):
         print 'Button B pressed'
         time.sleep(button_delay)
