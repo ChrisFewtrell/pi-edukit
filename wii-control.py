@@ -165,8 +165,7 @@ while True:
         print 'Button B pressed'
         time.sleep(button_delay)
 
-    speed = math.fmod(speed, 100)
-    if speed < 5:
-        speed = 5
-
+    speed = min(speed, 100)
+    speed = max(speed, 0)
+    
 
