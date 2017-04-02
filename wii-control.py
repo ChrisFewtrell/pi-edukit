@@ -165,7 +165,11 @@ while True:
         print 'Button B pressed'
         time.sleep(button_delay)
 
+    if (buttons & cwiid.BTN_HOME):
+        print('Speeed = ', speed)
+        time.sleep(button_delay)
+
     speed = min(speed, 100)
     speed = max(speed, 0)
-    
+
 
