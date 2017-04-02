@@ -147,7 +147,7 @@ while True:
         print('Down pressed')
         Backwards(speed)
         time.sleep(button_delay)
-    else
+    else:
         StopMotors()
 
     if (buttons & cwiid.BTN_B):
