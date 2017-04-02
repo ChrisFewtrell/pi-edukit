@@ -152,13 +152,13 @@ while True:
 
     if (buttons & cwiid.BTN_MINUS):
         speed = speed - 5
-        print  'Minus Button pressed:' + speed
+        print ('Minus Button pressed:' , speed)
 
         time.sleep(button_delay)
 
     if (buttons & cwiid.BTN_PLUS):
         speed = speed + 5
-        print 'Plus Button pressed: ' + speed
+        print('Plus Button pressed: ', speed)
         time.sleep(button_delay)
 
     if (buttons & cwiid.BTN_B):
