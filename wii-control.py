@@ -97,7 +97,7 @@ def getch():
   return ch
 
 
-import cwiid, time
+import cwiid, time, math
 
 button_delay = 0.1
 
@@ -151,19 +151,22 @@ while True:
         StopMotors()
 
     if (buttons & cwiid.BTN_MINUS):
-        print 'Minus Button pressed'
-        speed = speed - 1
+        speed = speed - 5
+        print  'Minus Button pressed:' + speed
+
         time.sleep(button_delay)
 
     if (buttons & cwiid.BTN_PLUS):
-        print 'Plus Button pressed'
-        speed = speed + 1
+        speed = speed + 5
+        print 'Plus Button pressed: ' + speed
         time.sleep(button_delay)
 
     if (buttons & cwiid.BTN_B):
         print 'Button B pressed'
         time.sleep(button_delay)
 
-
+    speed = math.fmod(speed, 100)
+    if speed < 5:
+        speed = 5
 
 
