@@ -116,7 +116,7 @@ wii.rpt_mode = cwiid.RPT_BTN
 speed = 100
 
 while True:
-    # char = getch()
+    buttons = wii.state['buttons']
 
     # Detects whether + and - are held down and if they are it quits the program
     if (buttons - cwiid.BTN_PLUS - cwiid.BTN_MINUS == 0):
