@@ -165,9 +165,6 @@ while True:
         print('Plus Button pressed: ', speed)
         time.sleep(button_delay)
 
-    if (buttons & cwiid.BTN_B):
-        print 'Button B pressed'
-        time.sleep(button_delay)
 
     if (buttons & cwiid.BTN_HOME):
         print('Speeed = ', speed)
@@ -177,8 +174,8 @@ while True:
     speed = max(speed, 0)
 
     if (buttons & cwiid.BTN_B):
-        GPIO.output(pinTrigger, True)
+        GPIO.output(pinBuzzer, True)
     else:
-        GPIO.output(pinTrigger, False)
+        GPIO.output(pinBuzzer, False)
 
 
