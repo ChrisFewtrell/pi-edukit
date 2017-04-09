@@ -14,10 +14,14 @@ pinMotorRightBackwards = 10
 pinMotorLeftForwards = 8
 pinMotorLeftBackwards = 7
 
+pinBuzzer = 21
+
 GPIO.setup(pinMotorRightForwards, GPIO.OUT)
 GPIO.setup(pinMotorRightBackwards, GPIO.OUT)
 GPIO.setup(pinMotorLeftForwards, GPIO.OUT)
 GPIO.setup(pinMotorLeftBackwards, GPIO.OUT)
+
+GPIO.setup(pinBuzzer, GPIO.OUT)
 
 pwmMotorRightForwards = GPIO.PWM(pinMotorRightForwards, Frequency)
 pwmMotorRightBackwards = GPIO.PWM(pinMotorRightBackwards, Frequency)
@@ -101,7 +105,7 @@ import cwiid, time, math
 
 button_delay = 0.1
 
-print 'Please press buttons 1 + 2 on your Wiimote now ...'
+print('Please press buttons 1 + 2 on your Wiimote now ...')
 time.sleep(1)
 
 # This code attempts to connect to your Wiimote and if it fails the program quits
@@ -171,5 +175,10 @@ while True:
 
     speed = min(speed, 100)
     speed = max(speed, 0)
+
+    if (buttons & cwiid.BTN_B):
+        GPIO.output(pinTrigger, True)
+    else:
+        GPIO.output(pinTrigger, False)
 
 
