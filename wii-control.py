@@ -15,6 +15,7 @@ pinMotorLeftForwards = 8
 pinMotorLeftBackwards = 7
 
 pinBuzzer = 21
+pinLed = 26
 
 GPIO.setup(pinMotorRightForwards, GPIO.OUT)
 GPIO.setup(pinMotorRightBackwards, GPIO.OUT)
@@ -22,6 +23,7 @@ GPIO.setup(pinMotorLeftForwards, GPIO.OUT)
 GPIO.setup(pinMotorLeftBackwards, GPIO.OUT)
 
 GPIO.setup(pinBuzzer, GPIO.OUT)
+GPIO.setup(pinLed, GPIO.OUT)
 
 pwmMotorRightForwards = GPIO.PWM(pinMotorRightForwards, Frequency)
 pwmMotorRightBackwards = GPIO.PWM(pinMotorRightBackwards, Frequency)
@@ -175,7 +177,9 @@ while True:
 
     if (buttons & cwiid.BTN_B):
         GPIO.output(pinBuzzer, True)
+        GPIO.output(pinLed, True)
     else:
         GPIO.output(pinBuzzer, False)
+        GPIO.output(pinLed, False)
 
 
