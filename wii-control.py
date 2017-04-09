@@ -117,6 +117,8 @@ except RuntimeError:
   print "Cannot connect to your Wiimote. Run again and make sure you are holding buttons 1 + 2!"
   quit()
 
+print('Connected')
+
 wii.rpt_mode = cwiid.RPT_BTN
 
 speed = 100
